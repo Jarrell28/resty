@@ -2,7 +2,7 @@
 
 ## Resty
 
-A browser based API testing tool similar to Swagger.io.
+A browser based API testing tool allowing you to easily interact with APIs
 
 ### Jarrell Houston
 
