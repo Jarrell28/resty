@@ -28,4 +28,6 @@ Run ``` npm i ``` to install the following dependencies:
 
 ![image](https://user-images.githubusercontent.com/33704616/119418494-bff0c400-bcbd-11eb-83cc-746158357064.png)
 
-![image](https://user-images.githubusercontent.com/33704616/119418931-c03d8f00-bcbe-11eb-917d-f7e43bc598ee.png)
+
+![image](https://user-images.githubusercontent.com/33704616/119418910-b582fa00-bcbe-11eb-8e33-62b0931664f0.png)
+
