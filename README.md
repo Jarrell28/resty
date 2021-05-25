@@ -8,7 +8,8 @@ A browser based API testing tool allowing you to easily interact with APIs
 
 ### Links and Resources
 
-- [Pull Request](https://github.com/Jarrell28/resty/pull/1)
+- [Pull Request](https://github.com/Jarrell28/resty/pull/1) 
+- [Deployed Link](https://youthful-goldwasser-17fd32.netlify.app/)
 
 ### Setup
 
