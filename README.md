@@ -1,4 +1,4 @@
-# LAB - Class 26
+# LAB - Class 27
 
 ## Resty
 
@@ -24,11 +24,24 @@ Run ``` npm i ``` to install the following dependencies:
 
 ``` npm start ```
 
+### Tests
+
+Run tests using ``` npm test ```
+
+![image](https://user-images.githubusercontent.com/33704616/119578547-51296e80-bd82-11eb-8551-d979be286b6e.png)
+
+
+### How To Use
+
+ - Currently able to fetch and render a response from the Star Wars API. 
+ - Enter the value https://swapi.dev/api/people/ in the input URL to observe the response
+
+
 
 #### UML / Application Wiring Diagram
 
-![image](https://user-images.githubusercontent.com/33704616/119418494-bff0c400-bcbd-11eb-83cc-746158357064.png)
+![image](https://user-images.githubusercontent.com/33704616/119578410-19222b80-bd82-11eb-933b-d19b8ea5077f.png)
 
 
-![image](https://user-images.githubusercontent.com/33704616/119418910-b582fa00-bcbe-11eb-8e33-62b0931664f0.png)
+![image](https://user-images.githubusercontent.com/33704616/119578430-22ab9380-bd82-11eb-9f90-0162ecba84c9.png)
 

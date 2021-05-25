@@ -1,4 +1,6 @@
 import React from 'react';
+import axios from 'axios';
+
 import '../style/form.scss';
 
 class Form extends React.Component {
@@ -20,6 +22,14 @@ class Form extends React.Component {
         e.preventDefault();
         const url = this.state.url;
         const method = this.state.method;
+
+        axios({
+            method,
+            url,
+        }).then(response => {
+            this.props.handleApiCall(response.data.count, response.data, response.headers)
+            console.log(response);
+        })
 
         this.setState({ ...this.state, requests: [...this.state.requests, { url, method }] })
     }
@@ -53,11 +63,11 @@ class Form extends React.Component {
                 </form>
 
                 {/* output */}
-                <div className="output">
+                {/* <div className="output">
                     <ul>
                         {listitem}
                     </ul>
-                </div>
+                </div> */}
 
             </div>
         )
