@@ -32,8 +32,8 @@ Run ``` npm i ``` to install the following dependencies:
 
 #### UML / Application Wiring Diagram
 
-![image](https://user-images.githubusercontent.com/33704616/119418494-bff0c400-bcbd-11eb-83cc-746158357064.png)
+![image](https://user-images.githubusercontent.com/33704616/119578410-19222b80-bd82-11eb-933b-d19b8ea5077f.png)
 
 
-![image](https://user-images.githubusercontent.com/33704616/119418910-b582fa00-bcbe-11eb-8e33-62b0931664f0.png)
+![image](https://user-images.githubusercontent.com/33704616/119578430-22ab9380-bd82-11eb-9f90-0162ecba84c9.png)
 
