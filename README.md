@@ -24,6 +24,11 @@ Run ``` npm i ``` to install the following dependencies:
 
 ``` npm start ```
 
+### How To Use
+
+ - Currently able to fetch and render a response from the Star Wars API. 
+ - Enter the value https://swapi.dev/api/people/ in the input URL to observe the response
+
 
 #### UML / Application Wiring Diagram
 
