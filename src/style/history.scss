@@ -1,0 +1,23 @@
+.history {
+    padding: 0 20px;
+    border: 1px solid #EDAF97;
+    margin-left: 20px;
+    margin-right: 50px;
+    width: 20%;
+
+    h3 {
+        text-align: center;
+        padding-top: 10px;
+        color: #EDAF97;
+        margin-bottom: 15px;
+    }
+
+    ul {
+        list-style: none;
+
+        li {
+            border-bottom: 1px solid #EDAF97;
+            padding: 15px 0;
+        }
+    }
+}

@@ -1,4 +1,4 @@
-# LAB - Class 27
+# LAB - Class 28
 
 ## Resty
 
@@ -33,15 +33,20 @@ Run tests using ``` npm test ```
 
 ### How To Use
 
- - Currently able to fetch and render a response from the Star Wars API. 
- - Enter the value https://swapi.dev/api/people/ in the input URL to observe the response
-
-
+ - Able to perform all REST methods from any API. 
+ - The API that was used to test REST methods is from this free sample API Server - https://reqres.in/
+ 
+ **Examples**
+ 
+ - Get Request - https://reqres.in/api/users/
+ - Post Request - https://reqres.in/api/users/2 - body - {"name": "morpheus", "job": "zion resident"}
+ - Put Request - https://reqres.in/api/users/2 - body - {"name": "morpheus", "job": "zion resident"}
+ - Delete request - https://reqres.in/api/users/2
 
 #### UML / Application Wiring Diagram
 
-![image](https://user-images.githubusercontent.com/33704616/119578410-19222b80-bd82-11eb-933b-d19b8ea5077f.png)
+![image](https://user-images.githubusercontent.com/33704616/119752090-f5cead80-be61-11eb-8b1c-b73620f0afa0.png)
 
 
-![image](https://user-images.githubusercontent.com/33704616/119578430-22ab9380-bd82-11eb-9f90-0162ecba84c9.png)
+![image](https://user-images.githubusercontent.com/33704616/119751548-fc105a00-be60-11eb-8b57-414e22ce3c23.png)
 
