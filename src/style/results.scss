@@ -1,23 +1,35 @@
+// @import 'loaders.css/src/animations/line-scale.scss';
+
 .output {
     border: 1px solid #EDAF97;
-    width: 60%;
+    width: 50%;
     height: 500px;
-    margin: 0 auto;
     padding: 20px;
     border-radius: 3px;
     overflow: scroll;
-
-    ul {
-        list-style: none;
-
-        li {
-            border-bottom: 1px solid #EDAF97;
-            padding: 15px 0;
-        }
-    }
+    position: relative;
+    
 
     p {
         margin: 20px 0;
     }
 
+}
+
+.loader {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.loader-hidden {
+  display: none;
+}
+.loader-active {
+  display: block;
+}
+
+.ball-triangle-path > div {
+    background-color: #EDAF97 !important;
 }

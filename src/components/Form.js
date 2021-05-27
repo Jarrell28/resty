@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import { If, Then } from 'react-if';
 
 import '../style/form.scss';
 
@@ -10,7 +11,7 @@ class Form extends React.Component {
         this.state = {
             url: "",
             method: "GET",
-            requests: []
+            body: ""
         }
     }
 
@@ -18,33 +19,44 @@ class Form extends React.Component {
         this.setState({ ...this.state, url: e.target.value });
     }
 
+    handleTextareaChange = (e) => {
+        this.setState({ body: e.target.value })
+    }
+
     handleSubmit = (e) => {
         e.preventDefault();
+        this.props.resetState();
         const url = this.state.url;
         const method = this.state.method;
+        if (!url) {
+            this.props.handleError('A valid URL is required!')
+        } else {
+            this.props.toggleLoading();
+            axios({
+                method: this.state.method,
+                url,
+                data: this.state.method === "POST" || this.state.method === "PUT" ? this.state.body : ""
+            }).then(response => {
+                this.props.handleApiCall(response.data.count, response.data, response.headers)
+                console.log(response);
+                this.props.toggleLoading();
+                this.state.method === "POST" || this.state.method === "PUT" ? this.props.getHistory(url, method, this.state.body) : this.props.getHistory(url, method);
 
-        axios({
-            method,
-            url,
-        }).then(response => {
-            this.props.handleApiCall(response.data.count, response.data, response.headers)
-            console.log(response);
-        })
+            }).catch(e => {
+                this.props.handleError(e)
+                this.props.toggleLoading();
+            })
 
-        this.setState({ ...this.state, requests: [...this.state.requests, { url, method }] })
+        }
+
     }
 
     handleButtonClick = (e) => {
         e.preventDefault();
-        this.setState({ ...this.state, method: e.target.innerHTML })
+        this.setState({ method: e.target.innerHTML })
     }
 
-
-
     render() {
-        let listitem = this.state.requests.map(item =>
-            <li>{item.method} - {item.url}</li>
-        )
 
         return (
             <div>
@@ -60,15 +72,17 @@ class Form extends React.Component {
                         <button onClick={this.handleButtonClick} class={this.state.method === 'PUT' ? 'active' : ''}>PUT</button>
                         <button onClick={this.handleButtonClick} class={this.state.method === 'DELETE' ? 'active' : ''}>DELETE</button>
                     </div>
+
+                    <If condition={this.state.method === "POST" || this.state.method === "PUT"}>
+
+                        <Then>
+                            <div className="textarea">
+                                <textarea rows="5" cols="50" placeholder="Enter JSON body" onChange={this.handleTextareaChange} value={this.state.body} />
+                            </div>
+                        </Then>
+                    </If>
+
                 </form>
-
-                {/* output */}
-                {/* <div className="output">
-                    <ul>
-                        {listitem}
-                    </ul>
-                </div> */}
-
             </div>
         )
     }
