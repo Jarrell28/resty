@@ -21,7 +21,7 @@ const History = (props) => {
         <div className="history">
             <h3>History</h3>
             <ul>
-                {props.history.map((item, idx) => <li key={idx} onClick={historyCall}>{item.method} - {item.url}</li>)}
+                {props.history?.map((item, idx) => <li key={idx} onClick={historyCall}>{item.method} - {item.url}</li>)}
             </ul>
         </div>
     )

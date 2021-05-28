@@ -1,4 +1,12 @@
+.App {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh;
+}
+
 .results {
     display: flex;
     justify-content: center;
+    align-items: stretch;
 }
