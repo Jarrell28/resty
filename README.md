@@ -45,7 +45,7 @@ Run tests using ``` npm test ```
 
 #### UML / Application Wiring Diagram
 
-![image](https://user-images.githubusercontent.com/33704616/119752090-f5cead80-be61-11eb-8b1c-b73620f0afa0.png)
+![image](https://user-images.githubusercontent.com/33704616/119915721-b8812300-bf28-11eb-92d3-835dea1dd4a5.png)
 
 
 ![image](https://user-images.githubusercontent.com/33704616/119914271-6c80af00-bf25-11eb-85f9-ab7804d2d421.png)
