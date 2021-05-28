@@ -1,4 +1,4 @@
-# LAB - Class 28
+# LAB - Class 29
 
 ## Resty
 
@@ -48,5 +48,5 @@ Run tests using ``` npm test ```
 ![image](https://user-images.githubusercontent.com/33704616/119752090-f5cead80-be61-11eb-8b1c-b73620f0afa0.png)
 
 
-![image](https://user-images.githubusercontent.com/33704616/119751548-fc105a00-be60-11eb-8b57-414e22ce3c23.png)
+![image](https://user-images.githubusercontent.com/33704616/119914271-6c80af00-bf25-11eb-85f9-ab7804d2d421.png)
 
