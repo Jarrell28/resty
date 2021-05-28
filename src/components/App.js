@@ -1,9 +1,13 @@
 import React from 'react';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import axios from 'axios';
+
 import Header from './Header';
 import Footer from './Footer';
-import Form from './Form';
-import Results from './Results';
-import History from './History';
+import Home from './Home';
+import Help from './Help';
+import HistoryPage from './HistoryPage';
+
 import '../style/app.scss';
 
 class App extends React.Component {
@@ -18,6 +22,16 @@ class App extends React.Component {
       error: "",
       history: []
     }
+  }
+
+  componentDidMount() {
+    let storage = [];
+
+    for (let i = 0; i < localStorage.length; i++) {
+      storage.push(JSON.parse(localStorage.getItem(localStorage.key(i))));
+    }
+
+    this.setState({ history: storage });
   }
 
   handleApiCall = (count, results, headers) => {
@@ -43,17 +57,36 @@ class App extends React.Component {
     this.setState({ results: [], count: 0, headers: {}, error: "" });
   }
 
+  runRequest = (obj) => {
+    this.toggleLoading();
+    axios({
+      method: obj.method,
+      url: obj.url,
+      data: JSON.parse(obj.data)
+    }).then(response => {
+      console.log(response);
+      this.handleApiCall(response.data.count, response.data, response.headers)
+      this.toggleLoading();
+    })
+  }
+
 
   render() {
     return (
-      <div>
-        <Header />
-        <Form handleApiCall={this.handleApiCall} toggleLoading={this.toggleLoading} handleError={this.handleError} getHistory={this.getHistory} resetState={this.resetState} />
-        <div className="results">
-          <History history={this.state.history} toggleLoading={this.toggleLoading} handleApiCall={this.handleApiCall} />
-          <Results results={this.state.results} count={this.state.count} headers={this.state.headers} loading={this.state.loading} error={this.state.error} resetState={this.resetState} />
+      <div className="App">
+        <BrowserRouter>
+          <Header />
+
+          <Switch>
+            <Route path="/history"><HistoryPage historyResults={this.state.history} runRequest={this.runRequest} /></Route>
+            <Route path="/help"><Help /></Route>
+            <Route path="/"><Home handleApiCall={this.handleApiCall} toggleLoading={this.toggleLoading} handleError={this.handleError} getHistory={this.getHistory} resetState={this.resetState} history={this.state.history} results={this.state.results} loading={this.state.loading} error={this.state.error} headers={this.state.headers} count={this.state.count} /></Route>
+
+          </Switch>
+
+
           <Footer />
-        </div>
+        </BrowserRouter>
 
       </div>
     );

@@ -23,7 +23,7 @@ class Form extends React.Component {
         this.setState({ body: e.target.value })
     }
 
-    handleSubmit = (e) => {
+    handleSubmit = async (e) => {
         e.preventDefault();
         this.props.resetState();
         const url = this.state.url;
@@ -38,7 +38,6 @@ class Form extends React.Component {
                 data: this.state.method === "POST" || this.state.method === "PUT" ? this.state.body : ""
             }).then(response => {
                 this.props.handleApiCall(response.data.count, response.data, response.headers)
-                console.log(response);
                 this.props.toggleLoading();
                 this.state.method === "POST" || this.state.method === "PUT" ? this.props.getHistory(url, method, this.state.body) : this.props.getHistory(url, method);
 
