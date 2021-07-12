@@ -1,6 +1,4 @@
-# LAB - Class 29
-
-## Resty
+# Resty
 
 A browser based API testing tool allowing you to easily interact with APIs
 
